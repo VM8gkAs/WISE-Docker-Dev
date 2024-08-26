@@ -46,7 +46,7 @@ services:
       - '../WISE-Client:/app'
 
   wise-nginx:
-    image: nginx:1.22
+    image: nginx:1.26
     container_name: wise-nginx
     depends_on:
       - wise-client
