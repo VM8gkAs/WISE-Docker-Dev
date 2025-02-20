@@ -31,6 +31,9 @@ services:
       - '8080:8080'
     volumes:
       - '../WISE-API:/app'
+    environment:
+      - WISE_HOSTNAME=http://localhost:81
+      - WISE4_HOSTNAME=http://localhost:81/legacy
     command: >
       bash -c '/app/create-application-dockerdev-properties-if-necessary.sh &&
       mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=*:5005" -Dspring-boot.run.profiles=dockerdev'
